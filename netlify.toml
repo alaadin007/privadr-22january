@@ -1,10 +1,8 @@
 [build]
-  command = "npm run build"
-  publish = ".next"
+  command = "npm run build && next export"
+  publish = "out"
 
 [build.environment]
   NEXT_TELEMETRY_DISABLED = "1"
   NODE_VERSION = "18"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"  # Skip the Netlify plugin for Next.js
